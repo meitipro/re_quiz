@@ -1,96 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Re — Quiz (15 Questions)</title>
+  <meta name="description" content="Play the Re Community Quiz — 15 random questions each run. Enter your name, test your knowledge, and share your score on X." />
+  <meta property="og:title" content="Re — Community Quiz" />
+  <meta property="og:description" content="15 random questions. Are you Re‑ready?" />
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/1965499081771667456/4QpwkYVk_400x400.jpg" />
+  <meta property="twitter:card" content="summary" />
+  <link rel="icon" type="image/png" href="https://pbs.twimg.com/profile_images/1965499081771667456/4QpwkYVk_400x400.jpg" />
+  <link rel="preconnect" href="https://pbs.twimg.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#05070a; --bg2:#0a0f14; /* deep navy */
+      --card:#0f141b; --border:#1c2631;
+      --ink:#e6f3ff; --muted:#9cb3c8;
+      --brand:#00E6A8; --brand2:#5AE0FF; --accent:#9BFFB3;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--ink);
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(0,230,168,.15), transparent 50%),
+        radial-gradient(800px 600px at 100% 0%, rgba(90,224,255,.12), transparent 40%),
+        linear-gradient(180deg,var(--bg1),var(--bg2));
+    }
+    .wrap{min-height:100svh; display:flex; align-items:center; justify-content:center; padding:28px}
+    .container{width:100%; max-width:1000px}
+    .header{display:flex; gap:14px; align-items:center; margin-bottom:18px}
+    .logo{width:60px; height:60px; border-radius:14px; object-fit:cover; box-shadow:0 8px 30px rgba(0,0,0,.45)}
+    .title{font-size:26px; font-weight:800; letter-spacing:.2px}
+    .badge{display:inline-flex; gap:6px; align-items:center; font-size:12px; color:#061218;
+      background:linear-gradient(90deg,var(--brand),var(--brand2)); padding:6px 10px; border-radius:999px; font-weight:700}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid var(--border); border-radius:18px; padding:22px;
+      box-shadow:0 12px 50px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.02)
+    }
+    label{color:var(--muted); font-size:14px; display:block; margin-bottom:8px}
+    input[type="text"]{width:100%; background:#071018; color:var(--ink); border:1px solid var(--border); border-radius:12px; padding:12px 14px; outline:none;}
+    input[type="text"]:focus{border-color:var(--brand); box-shadow:0 0 0 3px rgba(0,230,168,.25)}
+    .btn{cursor:pointer; border:0; border-radius:12px; padding:12px 16px; font-weight:700; color:#061218;
+      background:linear-gradient(90deg,var(--brand),var(--brand2));}
+    .btn:hover{filter:brightness(1.06)}
+    .btn.secondary{background:transparent; color:var(--ink); border:1px solid var(--border)}
+    .row{display:flex; gap:12px; align-items:center; justify-content:space-between}
+    .mt{margin-top:18px}
+    .muted{color:var(--muted)}
+    .progress{height:10px; background:#0b131b; border-radius:999px; overflow:hidden; border:1px solid var(--border)}
+    .bar{height:100%; background:linear-gradient(90deg,var(--brand),var(--brand2)); width:0; transition:width .25s ease}
+    .q{font-size:19px; line-height:1.5}
+    .options{display:grid; gap:10px; margin-top:14px}
+    .opt{width:100%; text-align:left; border:1px solid var(--border); background:#071018; color:var(--ink);
+      padding:12px 14px; border-radius:12px; cursor:pointer; transition:transform .05s ease, background .15s}
+    .opt:hover{background:#0a1620; transform:translateY(-1px)}
+    .opt.active{background:linear-gradient(180deg, rgba(0,230,168,.25), rgba(90,224,255,.18)); border-color:transparent}
+    .center{text-align:center}
+    .score{font-size:56px; font-weight:900}
+    .tiny{font-size:12px}
+
+    /* Socials grid */
+    .socials{margin-top:24px; display:grid; gap:8px; font-size:14px}
+    .socials a{color:var(--brand2); text-decoration:none;}
+    .socials a:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container">
+      <div class="header">
+        <img class="logo" src="https://pbs.twimg.com/profile_images/1965499081771667456/4QpwkYVk_400x400.jpg" alt="Re Logo" />
+        <div>
+          <div class="title">Re — Community Quiz</div>
+          <div class="muted">15 questions • Are you Re-ready?</div>
+        </div>
+        <span class="badge">LIVE</span>
+      </div>
+
+      <!-- START SCREEN -->
+      <section id="screen-start" class="card">
+        <label>Enter your name</label>
+        <input id="player-name" type="text" placeholder="e.g. Javi.eth" />
+        <button id="btn-start" class="btn mt" type="button">Start</button>
+        <div class="socials">
+          <a href="https://re.xyz/" target="_blank" rel="noopener">🌐 Website</a>
+          <a href="https://coverre.com/" target="_blank" rel="noopener">🛡️ CoverRe</a>
+          <a href="https://docs.re.xyz/" target="_blank" rel="noopener">❓ FAQ & Docs</a>
+          <a href="https://newsletter.re.xyz/subscribe" target="_blank" rel="noopener">🐝 Beehiiv Newsletter</a>
+          <a href="https://twitter.com/RE" target="_blank" rel="noopener">𝕏 Twitter</a>
+          <a href="https://www.linkedin.com/company/re-protocol/" target="_blank" rel="noopener">💼 LinkedIn</a>
+          <a href="https://medium.com/@reprotocol" target="_blank" rel="noopener">✍️ Medium</a>
+          <a href="https://warpcast.com/reprotocol" target="_blank" rel="noopener">✨ Farcaster</a>
+          <a href="https://arena.social/re" target="_blank" rel="noopener">🏟️ The Arena</a>
+          <a href="https://discord.gg/reprotocol" target="_blank" rel="noopener">🗣️ Discord</a>
+          <a href="https://t.me/re_protocol/1" target="_blank" rel="noopener">📱 Telegram</a>
+          <a href="https://www.twitch.tv/re_xyz/about" target="_blank" rel="noopener">📷 Twitch</a>
+          <a href="https://www.youtube.com/@reprotocol" target="_blank" rel="noopener">📺 YouTube</a>
+          <a href="https://drive.google.com/drive/folders/1QH6A7MwST67JYL8uknI1BePq3YW2QlyD" target="_blank" rel="noopener">🎨 Brand Kit</a>
+        </div>
+      </section>
+
+      <!-- QUIZ SCREEN -->
+      <section id="screen-quiz" class="card" style="display:none">
+        <div class="row">
+          <div class="muted" id="who">Player: —</div>
+          <div class="muted" id="counter">Question 1/15</div>
+        </div>
+        <div class="progress mt"><div class="bar" id="bar" style="width:0%"></div></div>
+        <div class="q mt" id="question">Question text</div>
+        <div class="options" id="options"></div>
+        <div class="row mt">
+          <button id="btn-back" class="btn secondary" type="button">Back</button>
+          <button id="btn-next" class="btn" type="button">Next</button>
+        </div>
+      </section>
+
+      <!-- RESULT SCREEN -->
+      <section id="screen-result" class="card center" style="display:none">
+        <div id="gg" class="title">GG!</div>
+        <div class="score" id="score">0/15</div>
+        <div class="muted">Your Re score</div>
+        <div class="row center mt" style="justify-content:center; gap:12px; flex-wrap:wrap">
+          <a id="share" class="btn" href="#" target="_blank" rel="noreferrer">Share on Twitter</a>
+          <button id="btn-restart" class="btn secondary" type="button">Play Again</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // ===== 60 QUESTIONS (15 random each run) =====
+    const QUESTIONS = [
+      {q:"What is Re’s main mission?", o:["Build a meme coin farm","Bring reinsurance yield on-chain","Create a gaming marketplace","Launch an NFT-only platform"], a:1},
+      {q:"What does ‘reinsurance’ mean in simple terms?", o:["Insurance for pets","Insurance for insurance companies","Insurance paid in NFTs","Insurance that never pays claims"], a:1},
+      {q:"Which blockchain platform is Re primarily built on (for its main protocols)?", o:["Solana","Avalanche (C-Chain + Subnet)","Bitcoin","Cosmos"], a:1},
+      {q:"Why does Re use an Avalanche Subnet?", o:["To mint meme NFTs","To keep private/regulatory data separate but still use blockchain","To farm Dogecoin","To avoid paying gas fees"], a:1},
+      {q:"Who can deposit into Re pools?", o:["Anyone, no checks","Only NFT holders","Users who complete KYC/AML checks","Only miners"], a:2},
+      {q:"What does reUSDe represent?", o:["A meme token","Capital that backs real insurance programs","A governance-only coin","A random airdrop"], a:1},
+      {q:"What does reUSD aim to provide?", o:["Lottery winnings","Exposure only to cat risks","Lower-volatility, steady yield from market/treasury strategies","Meme coin pumps"], a:2},
+      {q:"How is yield reflected for holders of reUSD / reUSDe?", o:["Weekly random token airdrops","Their token value (NAV) is updated daily — reflecting yield","Via NFT grants","Only if Bitcoin price rises"], a:1},
+      {q:"What do insurers get from using Re?", o:["Free promo on X","Extra reinsurance capacity with full collateral","Guaranteed zero losses","Free gadgets"], a:1},
+      {q:"Why is Re attractive to investors?", o:["It promises 100x in a week","It offers stable, uncorrelated yield from insurance premiums","It gives free NFTs","It avoids all KYC"], a:1},
+      {q:"Who is the CEO of Re?", o:["Vitalik Buterin","Satoshi Nakamoto","Karn Saroya","CZ"], a:2},
+      {q:"Why are yields on Re considered ‘uncorrelated’?", o:["They depend on BTC price","They depend on ETH staking","They come from insurance claims, not market swings","They only rise if SOL pumps"], a:2},
+      {q:"What happens if an insurance program has fewer claims than expected?", o:["Investors lose money","Extra profit flows back to Re pool investors","NFTs are burned","Yield resets to zero"], a:1},
+      {q:"What ensures Re’s pools are safe?", o:["Hype only","Free NFTs","Full collateral locked + transparent on-chain reserves","No audits"], a:2},
+      {q:"Which assets can be deposited into Re’s pools?", o:["SHIB, DOGE","Only BTC","USDC, DAI, USDe, sUSDe","Random meme tokens"], a:2},
+      {q:"What is @re.al contributor given for?", o:["Just joining Discord","Posting quality content & helping others","Buying NFTs","Spamming tags"], a:1},
+      {q:"Which content can help earn @re.al contributor?", o:["Copy-paste spam","Fake giveaways","Memes, art, and threads","Random emojis"], a:2},
+      {q:"Why are engagement roles important for @re.al contributor?", o:["They give free ETH","They boost your chance of getting this role","They auto-make you OG","They replace KYC"], a:1},
+      {q:"How do you keep the @re.al OG role?", o:["By holding it once","By staying active and contributing","By hiding","By buying tokens"], a:1},
+      {q:"Who usually becomes @re.al OG?", o:["Random new joiners","Standout long-term contributors","Only moderators","Only stakers"], a:1},
+      {q:"What kind of work helps you get @re.al OG?", o:["Ignoring community","Contest wins, quality posts, and building community","Farming bots","Tagging devs nonstop"], a:1},
+      {q:"What’s the highest main role in Re?", o:["Contributor","OG","Gigachad","Raider"], a:2},
+      {q:"How many Gigachads can exist per month?", o:["Unlimited","20","Max 2","5"], a:2},
+      {q:"Who can become a Gigachad?", o:["Anyone with 1 meme","An OG with consistent major contributions","Any new joiner","Only devs"], a:1},
+      {q:"Gigachad is for…", o:["People who buy ads","Elite reps of the community","Inactive members","Token holders only"], a:1},
+      {q:"What must you be before becoming Gigachad?", o:["A raider","A random member","An OG","A staker"], a:2},
+      {q:"Which role recognizes steady content + support?", o:["Gigachad","Contributor","Events Legend","Raider"], a:1},
+      {q:"If you win contests often, which role is more likely?", o:["Contributor only","OG","Gigachad auto","Raider"], a:1},
+      {q:"OG role is special because…", o:["It’s forever","You must keep contributing or lose it","It costs ETH","It’s random"], a:1},
+      {q:"Gigachad means you are…", o:["Average user","One of the top 2 elite monthly contributors","New joiner","Bot farmer"], a:1},
+      {q:"How do you get @re.staker?", o:["Win a meme contest","Deposit stablecoins on re.xyz & open a ticket","Tag 5 mods","Farm likes"], a:1},
+      {q:"What’s the main action to become reStaker?", o:["Join events","Comment on Twitter","Stake stablecoins","Buy NFTs"], a:2},
+      {q:"What do Raider roles reward?", o:["Running validators","Great quote-tweets and comments on posts","Buying ads","Just joining"], a:1},
+      {q:"What’s the first Raider level?", o:["Level 10","Pro Raider","Raider Level 1","Contributor"], a:2},
+      {q:"How many Raider levels exist?", o:["5","3","Unlimited","10"], a:1},
+      {q:"Higher Raider levels mean…", o:["More bots","Better, consistent engagement on Re’s posts","Paying fees","Spamming"], a:1},
+      {q:"What’s a Raider’s main platform of action?", o:["Telegram","Twitter (X) posts","Only Discord","TikTok"], a:1},
+      {q:"How do you get @General Events Legend?", o:["By staking","By posting memes","By winning Discord games & activities","By buying tokens"], a:2},
+      {q:"Events Legend role shows…", o:["You stake ETH","You are active in daily Discord fun","You raid tweets","You are OG"], a:1},
+      {q:"Raiders are chosen for…", o:["Playing games","Staking tokens","Top comments and QTs","Owning NFTs"], a:2},
+      {q:"Re’s main tokens are…", o:["BTC & ETH","reUSDe & reUSD","NFT coins","Meme tokens"], a:1},
+      {q:"What do reUSDe holders earn from?", o:["Catastrophe only","Insurance premiums + yield","Airdrop bots","Free memes"], a:1},
+      {q:"reUSD yield is more…", o:["Risky","Stable and lower-volatility","Zero","Lottery-style"], a:1},
+      {q:"How often is NAV updated?", o:["Never","Daily","Monthly","Weekly only"], a:1},
+      {q:"What keeps Re transparent?", o:["Private groups","On-chain proof of reserves + audits","Only hype","NFT art"], a:1},
+      {q:"Why is KYC needed?", o:["To farm points","To meet regulations & allow deposits","To meme","To skip staking"], a:1},
+      {q:"Which role is max 2 people per month?", o:["Contributor","OG","Gigachad","Raider"], a:2},
+      {q:"Which role rewards daily event winners?", o:["Raider","General Events Legend","Contributor","OG"], a:1},
+      {q:"Which role needs you to deposit stablecoins?", o:["Raider","OG","reStaker","Events Legend"], a:2},
+      {q:"Which role rewards quality QTs/comments?", o:["Contributor","Raider","OG","Staker"], a:1},
+      {q:"Contributor is about…", o:["Buying tokens","Consistent quality content & support","Owning NFTs","Playing games"], a:1},
+      {q:"OG means…", o:["Original Gamer","Long-term standout contributor","Meme buyer","Token whale"], a:1},
+      {q:"Gigachad proves…", o:["You are just average","You are an elite rep, top of community","You spam","You only stake"], a:1},
+      {q:"Events Legend proves…", o:["You stake ETH","You win daily Discord events","You are OG","You run raids"], a:1},
+      {q:"Raiders prove…", o:["You buy NFTs","You boost Re’s posts with QTs/comments","You stake","You host games"], a:1},
+      {q:"Posting memes and threads helps with…", o:["Nothing","Contributor & OG recognition","Staker role","Raider only"], a:1},
+      {q:"Winning contests regularly leads to…", o:["Raider","Events Legend","OG recognition","Only staker"], a:2},
+      {q:"Consistency in big contributions may lead to…", o:["Contributor only","Gigachad","Events Legend","Raider"], a:1},
+      {q:"Supporting community members matters because…", o:["It’s ignored","It counts for Contributor/OG roles","It gives ETH directly","It makes you staker"], a:1},
+      {q:"What’s the top proof of Re’s culture?", o:["Random hype","Roles that reward real effort, content, and engagement","Paid bots","NFT raffles"], a:1}
+    ];
+
+    // ===== STATE =====
+    const TotalPerRun = 15; let selection = [], idx = 0, answers = [], name = "";
+
+    // ===== HELPERS =====
+    const $ = (id) => document.getElementById(id);
+    const shuffle = (a) => { const arr = a.slice(); for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; };
+
+    function mountQuestion(){
+      const q = selection[idx];
+      $("counter").textContent = `Question ${idx+1}/${selection.length}`;
+      $("who").textContent = `Player: ${name || 'Guest'}`;
+      $("question").textContent = q.q;
+      const pct = Math.round(((idx+1)/selection.length)*100);
+      $("bar").style.width = pct + "%";
+
+      const opts = $("options"); opts.innerHTML = "";
+      q.o.forEach((text,i)=>{
+        const b = document.createElement("button");
+        b.className = "opt" + (answers[idx]===i? " active" : "");
+        b.type = "button";
+        b.innerHTML = `<span style="opacity:.8;margin-right:6px">${String.fromCharCode(97+i)})</span>${text}`;
+        b.addEventListener("click",()=>{ answers[idx]=i; mountQuestion(); });
+        opts.appendChild(b);
+      });
+
+      $("btn-next").textContent = (idx===selection.length-1 ? "Finish" : "Next");
+      $("btn-back").disabled = (idx===0);
+    }
+
+    function computeScore(){ let s=0; for(let i=0;i<selection.length;i++) if(answers[i]===selection[i].a) s++; return s; }
+
+    function startGame(){
+      if(QUESTIONS.length < TotalPerRun){
+        alert(`Please add at least ${TotalPerRun} questions to start the quiz.`);
+        return;
+      }
+      selection = shuffle(QUESTIONS).slice(0, TotalPerRun);
+      answers = new Array(selection.length).fill(-1);
+      idx = 0;
+      $("screen-start").style.display = "none";
+      $("screen-result").style.display = "none";
+      $("screen-quiz").style.display = "block";
+      mountQuestion();
+    }
+
+    function toResult(){
+      const score = computeScore();
+      $("screen-quiz").style.display = "none";
+      $("screen-result").style.display = "block";
+      $("gg").textContent = `GG, ${name || 'Guest'}!`;
+      $("score").textContent = `${score}/${TotalPerRun}`;
+
+      const who = (name||'Guest');
+      const tweet = `"${who}" just scored ${score}/${TotalPerRun} in the Re Quiz! 🚀
+
+Think you can do better?
+
+Play here: ${location.href}
+
+Re to the core @re`;
+      const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`;
+      $("share").setAttribute("href", url);
+    }
+
+    $("btn-start").addEventListener("click",()=>{ name = $("player-name").value.trim(); startGame(); });
+    $("btn-next").addEventListener("click",()=>{ if(idx < selection.length-1){ idx++; mountQuestion(); } else { toResult(); } });
+    $("btn-back").addEventListener("click",()=>{ if(idx>0){ idx--; mountQuestion(); } });
+    $("btn-restart").addEventListener("click",()=>{ $("screen-result").style.display = "none"; $("screen-start").style.display = "block"; $("player-name").focus(); });
+  </script>
+</body>
 </html>
