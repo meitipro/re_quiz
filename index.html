@@ -69,6 +69,11 @@
     .socials{margin-top:24px; display:grid; gap:8px; font-size:14px}
     .socials a{color:var(--brand2); text-decoration:none;}
     .socials a:hover{text-decoration:underline;}
+
+    /* Name chips */
+    .chips{display:flex; gap:8px; margin-top:10px}
+    .chip{cursor:pointer; border:1px solid var(--border); background:#071018; color:var(--ink); padding:6px 10px; border-radius:999px; font-weight:700}
+    .chip:hover{background:#0a1620}
   </style>
 </head>
 <body>
@@ -86,7 +91,11 @@
       <!-- START SCREEN -->
       <section id="screen-start" class="card">
         <label>Enter your name</label>
-        <input id="player-name" type="text" placeholder="e.g. Javi.eth" />
+        <input id="player-name" type="text" placeholder="e.g. AlphaRe.eth" />
+        <div class="chips">
+          <button class="chip" type="button" data-name="AlphaRe.eth">AlphaRe.eth</button>
+          <button class="chip" type="button" data-name="QueenBee.re">QueenBee.re</button>
+        </div>
         <button id="btn-start" class="btn mt" type="button">Start</button>
         <div class="socials">
           <a href="https://re.xyz/" target="_blank" rel="noopener">🌐 Website</a>
@@ -152,51 +161,12 @@
       {q:"What happens if an insurance program has fewer claims than expected?", o:["Investors lose money","Extra profit flows back to Re pool investors","NFTs are burned","Yield resets to zero"], a:1},
       {q:"What ensures Re’s pools are safe?", o:["Hype only","Free NFTs","Full collateral locked + transparent on-chain reserves","No audits"], a:2},
       {q:"Which assets can be deposited into Re’s pools?", o:["SHIB, DOGE","Only BTC","USDC, DAI, USDe, sUSDe","Random meme tokens"], a:2},
-      {q:"What is @re.al contributor given for?", o:["Just joining Discord","Posting quality content & helping others","Buying NFTs","Spamming tags"], a:1},
-      {q:"Which content can help earn @re.al contributor?", o:["Copy-paste spam","Fake giveaways","Memes, art, and threads","Random emojis"], a:2},
-      {q:"Why are engagement roles important for @re.al contributor?", o:["They give free ETH","They boost your chance of getting this role","They auto-make you OG","They replace KYC"], a:1},
-      {q:"How do you keep the @re.al OG role?", o:["By holding it once","By staying active and contributing","By hiding","By buying tokens"], a:1},
-      {q:"Who usually becomes @re.al OG?", o:["Random new joiners","Standout long-term contributors","Only moderators","Only stakers"], a:1},
-      {q:"What kind of work helps you get @re.al OG?", o:["Ignoring community","Contest wins, quality posts, and building community","Farming bots","Tagging devs nonstop"], a:1},
-      {q:"What’s the highest main role in Re?", o:["Contributor","OG","Gigachad","Raider"], a:2},
-      {q:"How many Gigachads can exist per month?", o:["Unlimited","20","Max 2","5"], a:2},
-      {q:"Who can become a Gigachad?", o:["Anyone with 1 meme","An OG with consistent major contributions","Any new joiner","Only devs"], a:1},
-      {q:"Gigachad is for…", o:["People who buy ads","Elite reps of the community","Inactive members","Token holders only"], a:1},
-      {q:"What must you be before becoming Gigachad?", o:["A raider","A random member","An OG","A staker"], a:2},
-      {q:"Which role recognizes steady content + support?", o:["Gigachad","Contributor","Events Legend","Raider"], a:1},
-      {q:"If you win contests often, which role is more likely?", o:["Contributor only","OG","Gigachad auto","Raider"], a:1},
-      {q:"OG role is special because…", o:["It’s forever","You must keep contributing or lose it","It costs ETH","It’s random"], a:1},
-      {q:"Gigachad means you are…", o:["Average user","One of the top 2 elite monthly contributors","New joiner","Bot farmer"], a:1},
-      {q:"How do you get @re.staker?", o:["Win a meme contest","Deposit stablecoins on re.xyz & open a ticket","Tag 5 mods","Farm likes"], a:1},
-      {q:"What’s the main action to become reStaker?", o:["Join events","Comment on Twitter","Stake stablecoins","Buy NFTs"], a:2},
-      {q:"What do Raider roles reward?", o:["Running validators","Great quote-tweets and comments on posts","Buying ads","Just joining"], a:1},
-      {q:"What’s the first Raider level?", o:["Level 10","Pro Raider","Raider Level 1","Contributor"], a:2},
-      {q:"How many Raider levels exist?", o:["5","3","Unlimited","10"], a:1},
-      {q:"Higher Raider levels mean…", o:["More bots","Better, consistent engagement on Re’s posts","Paying fees","Spamming"], a:1},
-      {q:"What’s a Raider’s main platform of action?", o:["Telegram","Twitter (X) posts","Only Discord","TikTok"], a:1},
-      {q:"How do you get @General Events Legend?", o:["By staking","By posting memes","By winning Discord games & activities","By buying tokens"], a:2},
-      {q:"Events Legend role shows…", o:["You stake ETH","You are active in daily Discord fun","You raid tweets","You are OG"], a:1},
-      {q:"Raiders are chosen for…", o:["Playing games","Staking tokens","Top comments and QTs","Owning NFTs"], a:2},
       {q:"Re’s main tokens are…", o:["BTC & ETH","reUSDe & reUSD","NFT coins","Meme tokens"], a:1},
       {q:"What do reUSDe holders earn from?", o:["Catastrophe only","Insurance premiums + yield","Airdrop bots","Free memes"], a:1},
       {q:"reUSD yield is more…", o:["Risky","Stable and lower-volatility","Zero","Lottery-style"], a:1},
       {q:"How often is NAV updated?", o:["Never","Daily","Monthly","Weekly only"], a:1},
       {q:"What keeps Re transparent?", o:["Private groups","On-chain proof of reserves + audits","Only hype","NFT art"], a:1},
-      {q:"Why is KYC needed?", o:["To farm points","To meet regulations & allow deposits","To meme","To skip staking"], a:1},
-      {q:"Which role is max 2 people per month?", o:["Contributor","OG","Gigachad","Raider"], a:2},
-      {q:"Which role rewards daily event winners?", o:["Raider","General Events Legend","Contributor","OG"], a:1},
-      {q:"Which role needs you to deposit stablecoins?", o:["Raider","OG","reStaker","Events Legend"], a:2},
-      {q:"Which role rewards quality QTs/comments?", o:["Contributor","Raider","OG","Staker"], a:1},
-      {q:"Contributor is about…", o:["Buying tokens","Consistent quality content & support","Owning NFTs","Playing games"], a:1},
-      {q:"OG means…", o:["Original Gamer","Long-term standout contributor","Meme buyer","Token whale"], a:1},
-      {q:"Gigachad proves…", o:["You are just average","You are an elite rep, top of community","You spam","You only stake"], a:1},
-      {q:"Events Legend proves…", o:["You stake ETH","You win daily Discord events","You are OG","You run raids"], a:1},
-      {q:"Raiders prove…", o:["You buy NFTs","You boost Re’s posts with QTs/comments","You stake","You host games"], a:1},
-      {q:"Posting memes and threads helps with…", o:["Nothing","Contributor & OG recognition","Staker role","Raider only"], a:1},
-      {q:"Winning contests regularly leads to…", o:["Raider","Events Legend","OG recognition","Only staker"], a:2},
-      {q:"Consistency in big contributions may lead to…", o:["Contributor only","Gigachad","Events Legend","Raider"], a:1},
-      {q:"Supporting community members matters because…", o:["It’s ignored","It counts for Contributor/OG roles","It gives ETH directly","It makes you staker"], a:1},
-      {q:"What’s the top proof of Re’s culture?", o:["Random hype","Roles that reward real effort, content, and engagement","Paid bots","NFT raffles"], a:1}
+      {q:"Why is KYC needed?", o:["To farm points","To meet regulations & allow deposits","To meme","To skip staking"], a:1}
     ];
 
     // ===== STATE =====
@@ -205,6 +175,19 @@
     // ===== HELPERS =====
     const $ = (id) => document.getElementById(id);
     const shuffle = (a) => { const arr = a.slice(); for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; };
+
+    // Prefill helpers
+    const sampleNames = ["AlphaRe.eth","QueenBee.re"];
+    window.addEventListener('DOMContentLoaded', ()=>{
+      // Randomize placeholder from two casual examples
+      const ph = sampleNames[Math.floor(Math.random()*sampleNames.length)];
+      const inp = $("player-name");
+      if(inp) inp.placeholder = `e.g. ${ph}`;
+      // Chip clicks
+      document.querySelectorAll('.chip').forEach(el=>{
+        el.addEventListener('click', ()=>{ $("player-name").value = el.dataset.name; });
+      });
+    });
 
     function mountQuestion(){
       const q = selection[idx];
